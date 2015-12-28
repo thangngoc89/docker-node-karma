@@ -7,7 +7,6 @@ ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 RUN apt-get -y update
 RUN apt-get install -y -q software-properties-common
-#RUN apt-add-repository -y ppa:mozillateam/firefox-stable
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
 RUN apt-get update -y
