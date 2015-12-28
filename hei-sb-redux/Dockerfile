@@ -17,6 +17,9 @@ RUN apt-get install -y -q \
   Xvfb
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN npm install node-sass bufferutil utf-8-validate && \
+  rm -rf node_modules
+
 ADD xvfb.sh /etc/init.d/xvfb
 ADD entrypoint.sh /entrypoint.sh
 
